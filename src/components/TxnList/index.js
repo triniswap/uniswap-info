@@ -279,11 +279,11 @@ function TxnList({ transactions, symbol0Override, symbol1Override, color }) {
   const below780 = useMedia('(max-width: 780px)')
 
   const ListItem = ({ item }) => {
-    if (item.token0Symbol === 'WETH') {
+    if (item.token0Symbol === 'WXDAI') {
       item.token0Symbol = 'xDai'
     }
 
-    if (item.token1Symbol === 'WETH') {
+    if (item.token1Symbol === 'WXDAI') {
       item.token1Symbol = 'xDai'
     }
 
