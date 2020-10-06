@@ -459,11 +459,11 @@ export const Search = ({ small = false }) => {
           )}
           {filteredPairList &&
             filteredPairList.slice(0, pairsShown).map(pair => {
-              if (pair?.token0?.id === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2') {
+              if (pair?.token0?.id === '0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d') {
                 pair.token0.name = 'xDai (Wrapped)'
                 pair.token0.symbol = 'xDai'
               }
-              if (pair?.token1.id === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2') {
+              if (pair?.token1.id === '0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d') {
                 pair.token1.name = 'xDai (Wrapped)'
                 pair.token1.symbol = 'xDai'
               }

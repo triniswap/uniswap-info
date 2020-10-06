@@ -286,7 +286,7 @@ const getTopTokens = async (ethPrice, ethPriceOld) => {
             data.oneDayTxns = data.txCount
           }
 
-          if (data.id === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2') {
+          if (data.id === '0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d') {
             data.name = 'xDai (Wrapped)'
             data.symbol = 'xDai'
           }
@@ -407,8 +407,8 @@ const getTokenData = async (address, ethPrice, ethPriceOld) => {
       data.oneDayTxns = data.txCount
     }
 
-    // fix for WETH
-    if (data.id === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2') {
+    // fix for WXDAI
+    if (data.id === '0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d') {
       data.name = 'xDai (Wrapped)'
       data.symbol = 'xDai'
     }
