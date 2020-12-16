@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useCallback } from 'react'
 import 'feather-icons'
 import { withRouter } from 'react-router-dom'
 import { Text } from 'rebass'
@@ -16,6 +16,7 @@ import TokenChart from '../components/TokenChart'
 import { BasicLink } from '../components/Link'
 import Search from '../components/Search'
 import { formattedNum, formattedPercent, getPoolLink, getSwapLink, localNumber } from '../utils'
+import { addTokenToMetamask } from '../utils/addTokenToMetamask'
 import { useTokenData, useTokenTransactions, useTokenPairs } from '../contexts/TokenData'
 import { TYPE, ThemedBackground } from '../Theme'
 import { transparentize } from 'polished'
@@ -109,6 +110,8 @@ function TokenPage({ address, history }) {
     document.querySelector('body').scrollTo(0, 0)
   }, [])
 
+  const HNY_SYMBOL = 'HNY'
+
   // detect color from token
   const backgroundColor = useColor(id, symbol)
 
@@ -167,6 +170,9 @@ function TokenPage({ address, history }) {
     })
   }, [])
 
+  const { ethereum } = window
+  const handleAddHnyToMM = useCallback((id, symbol) => addTokenToMetamask(ethereum, id, symbol), [])
+
   return (
     <PageWrapper>
       <ThemedBackground backgroundColor={transparentize(0.6, backgroundColor)} />
@@ -222,6 +228,15 @@ function TokenPage({ address, history }) {
               </RowFixed>
               <span>
                 <RowFixed ml={below500 ? '0' : '2.5rem'} mt={below500 ? '1rem' : '0'}>
+                  {symbol != undefined && HNY_SYMBOL === symbol && (
+                    <ButtonDark
+                      onClick={() => handleAddHnyToMM(id, symbol)}
+                      style={{ marginRight: '0.4rem' }}
+                      color={backgroundColor}
+                    >
+                      + Add HNY to MetaMask
+                    </ButtonDark>
+                  )}
                   {!!!savedTokens[address] && !below800 ? (
                     <Hover onClick={() => addToken(address, symbol)}>
                       <StyledIcon>
