@@ -13,7 +13,6 @@ import AllTokensPage from './pages/AllTokensPage'
 import AllPairsPage from './pages/AllPairsPage'
 import PinnedData from './components/PinnedData'
 
-import SideNav from './components/SideNav'
 import AccountLookup from './pages/AccountLookup'
 import { OVERVIEW_TOKEN_BLACKLIST, PAIR_BLACKLIST } from './constants'
 import LocalLoader from './components/LocalLoader'
@@ -25,7 +24,7 @@ const AppWrapper = styled.div`
 `
 const ContentWrapper = styled.div`
   display: grid;
-  grid-template-columns: ${({ open }) => (open ? '220px 1fr 200px' : '220px 1fr 64px')};
+  grid-template-columns: ${({ open }) => (open ? '100% 1fr 200px' : '100% 1fr 64px')};
 
   @media screen and (max-width: 1400px) {
     grid-template-columns: 220px 1fr;
@@ -67,7 +66,6 @@ const LayoutWrapper = ({ children, savedOpen, setSavedOpen }) => {
   return (
     <>
       <ContentWrapper open={savedOpen}>
-        <SideNav />
         <Center id="center">{children}</Center>
         <Right open={savedOpen}>
           <PinnedData open={savedOpen} setSavedOpen={setSavedOpen} />
