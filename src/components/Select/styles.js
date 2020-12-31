@@ -6,7 +6,7 @@ export const customStyles = {
     ...styles,
     borderRadius: 20,
     backgroundColor: 'white',
-    color: '#6C7284',
+    color: '#FFFFFF',
     maxHeight: '32px',
     margin: 0,
     padding: 0,
@@ -20,16 +20,16 @@ export const customStyles = {
   }),
   placeholder: styles => ({
     ...styles,
-    color: '#6C7284'
+    color: '#FFFFFF'
   }),
   input: styles => ({
     ...styles,
-    color: '#6C7284',
+    color: '#FFFFFF',
     overflow: 'hidden'
   }),
   singleValue: styles => ({
     ...styles,
-    color: '#6C7284',
+    color: '#FFFFFF',
     width: '100%',
     paddingRight: '8px'
   }),
@@ -38,7 +38,7 @@ export const customStyles = {
   }),
   dropdownIndicator: styles => ({
     ...styles,
-    color: '#6C7284',
+    color: '#FFFFFF',
     paddingRight: 0
   }),
   valueContainer: styles => ({
@@ -84,7 +84,7 @@ export const customStylesMobile = {
     ...styles,
     borderRadius: 12,
     backgroundColor: 'white',
-    color: '#6C7284',
+    color: '#FFFFFF',
     maxHeight: '32px',
     margin: 0,
     padding: 0,
@@ -96,16 +96,16 @@ export const customStylesMobile = {
   }),
   placeholder: styles => ({
     ...styles,
-    color: '#6C7284'
+    color: '#FFFFFF'
   }),
   input: styles => ({
     ...styles,
-    color: '6C7284',
+    color: 'FFFFFF',
     overflow: 'hidden'
   }),
   singleValue: styles => ({
     ...styles,
-    color: '#6C7284'
+    color: '#FFFFFF'
   }),
   indicatorSeparator: () => ({
     display: 'none'
@@ -155,7 +155,7 @@ export const customStylesTime = {
     ...styles,
     borderRadius: 20,
     backgroundColor: 'white',
-    color: '#6C7284',
+    color: '#FFFFFF',
     maxHeight: '32px',
     margin: 0,
     padding: 0,
@@ -168,7 +168,7 @@ export const customStylesTime = {
   }),
   placeholder: styles => ({
     ...styles,
-    color: '#6C7284'
+    color: '#FFFFFF'
   }),
   input: styles => ({
     ...styles,
@@ -176,7 +176,7 @@ export const customStylesTime = {
   }),
   singleValue: styles => ({
     ...styles,
-    color: '#6C7284',
+    color: '#FFFFFF',
     width: '100%',
     paddingRight: '8px'
   }),
@@ -185,7 +185,7 @@ export const customStylesTime = {
   }),
   dropdownIndicator: styles => ({
     ...styles,
-    color: '#6C7284',
+    color: '#FFFFFF',
     paddingRight: 0
   }),
   valueContainer: styles => ({

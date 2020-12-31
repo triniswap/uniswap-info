@@ -15,64 +15,64 @@ const theme = (darkMode, color) => ({
   textColor: darkMode ? color : 'black',
 
   panelColor: darkMode ? 'rgba(255, 255, 255, 0)' : 'rgba(255, 255, 255, 0)',
-  backgroundColor: darkMode ? '#212429' : '#F7F8FA',
+  backgroundColor: darkMode ? '#FFFFFF' : '#FFFFFF',
 
-  uniswapPink: darkMode ? '#7CE0D6' : 'black',
+  uniswapPink: darkMode ? '#black' : 'black',
 
-  concreteGray: darkMode ? '#292C2F' : '#FAFAFA',
-  inputBackground: darkMode ? '#1F1F1F' : '#FAFAFA',
-  shadowColor: darkMode ? '#000' : '#2F80ED',
-  mercuryGray: darkMode ? '#333333' : '#E1E1E1',
+  concreteGray: darkMode ? '#FFF' : '#FFF',
+  inputBackground: darkMode ? '#FFF' : '#FFF',
+  shadowColor: darkMode ? '#000' : '#000',
+  mercuryGray: darkMode ? '#FFF' : '#FFF',
 
-  text1: darkMode ? '#FAFAFA' : '#1F1F1F',
-  text2: darkMode ? '#C3C5CB' : '#565A69',
-  text3: darkMode ? '#6C7284' : '#888D9B',
-  text4: darkMode ? '#565A69' : '#C3C5CB',
-  text5: darkMode ? '#2C2F36' : '#EDEEF2',
+  text1: darkMode ? '#000000' : '#000000',
+  text2: darkMode ? '#000000' : '#000000',
+  text3: darkMode ? '#000000' : '#000000',
+  text4: darkMode ? '#000000' : '#000000',
+  text5: darkMode ? '#000000' : '#000000',
 
   // special case text types
-  white: '#FFFFFF',
+  white: '#000',
 
   // backgrounds / greys
-  bg1: darkMode ? '#212429' : '#FAFAFA',
-  bg2: darkMode ? '#2C2F36' : '#F7F8FA',
-  bg3: darkMode ? '#40444F' : '#EDEEF2',
-  bg4: darkMode ? '#565A69' : '#CED0D9',
-  bg5: darkMode ? '#565A69' : '#888D9B',
-  bg6: darkMode ? '#000' : '#FFFFFF',
+  bg1: darkMode ? '#FFFFFF' : '#FFFFFF',
+  bg2: darkMode ? '#FFFFFF' : '#FFF',
+  bg3: darkMode ? '#FFF' : '#FFF',
+  bg4: darkMode ? '#FFF' : '#FFF',
+  bg5: darkMode ? '#FFF' : '#FFF',
+  bg6: darkMode ? '#000' : '#FFF',
 
   //specialty colors
-  modalBG: darkMode ? 'rgba(0,0,0,0.85)' : 'rgba(0,0,0,0.6)',
-  advancedBG: darkMode ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.4)',
-  onlyLight: darkMode ? '#22242a' : 'transparent',
+  modalBG: darkMode ? 'rgba(255,255,255,.425)' : 'rgba(255,255,255,0.3)',
+  advancedBG: darkMode ? 'rgba(255,255,255,0.1)' : 'rgba(255,255,255,0.6)',
+  onlyLight: darkMode ? '#FFFFFF' : 'transparent',
   divider: darkMode ? 'rgba(43, 43, 43, 0.435)' : 'rgba(43, 43, 43, 0.035)',
 
   //primary colors
-  primary1: darkMode ? '#2172E5' : '#7CE0D6',
-  primary2: darkMode ? '#3680E7' : '#FF8CC3',
-  primary3: darkMode ? '#4D8FEA' : '#FF99C9',
-  primary4: darkMode ? '#376bad70' : '#F6DDE8',
-  primary5: darkMode ? '#153d6f70' : '#FDEAF1',
+  primary1: darkMode ? '#fff' : '#fff',
+  primary2: darkMode ? '#fff' : '#fff',
+  primary3: darkMode ? '#fff' : '#fff',
+  primary4: darkMode ? '#fff' : '#fff',
+  primary5: darkMode ? '#fff' : '#fff',
 
   // color text
-  primaryText1: darkMode ? '#6da8ff' : '#7CE0D6',
+  primaryText1: darkMode ? 'rgba(0, 0, 0, 0.8)' : '#000',
 
   // secondary colors
-  secondary1: darkMode ? '#2172E5' : '#7CE0D6',
-  secondary2: darkMode ? '#17000b26' : '#F6DDE8',
-  secondary3: darkMode ? '#17000b26' : '#FDEAF1',
+  secondary1: darkMode ? '#FFF' : '#FFF',
+  secondary2: darkMode ? '#FFF' : '#FFF',
+  secondary3: darkMode ? '#FFF' : '#FFF',
 
-  shadow1: darkMode ? '#000' : '#2F80ED',
+  shadow1: darkMode ? '#000' : '#000',
 
   // other
   red1: '#FF6871',
   green1: '#27AE60',
   yellow1: '#FFE270',
   yellow2: '#F3841E',
-  link: '#2172E5',
+  link: '#e52020',
   blue: '2f80ed',
 
-  background: darkMode ? 'black' : `radial-gradient(50% 50% at 50% 50%, #FFFFFF30 0%, #fff 0%)`
+  background: darkMode ? 'black' : `white`
 })
 
 const TextWrapper = styled(Text)`
@@ -144,8 +144,7 @@ export const ThemedBackground = styled.div`
   max-width: 100vw !important;
   height: 200vh;
   mix-blend-mode: color;
-  background: ${({ backgroundColor }) =>
-    `radial-gradient(50% 50% at 50% 50%, ${backgroundColor} 0%, rgba(255, 255, 255, 0) 100%)`};
+  background: transparent;
   position: absolute;
   top: 0px;
   left: 0px;
