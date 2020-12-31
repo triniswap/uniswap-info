@@ -22,11 +22,11 @@ const Wrapper = styled.div`
   top: 0px;
   z-index: 9999;
   box-sizing: border-box;
-  /* background-color: #1b1c22; */
-  background: linear-gradient(193.68deg, #1b1c22 0.68%, #000000 100.48%);
+  /* background-color: #fff; */
+  background: linear-gradient(193.68deg, #fff 0.68%, #000000 100.48%);
   color: ${({ theme }) => theme.bg2};
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 1000px) {
     grid-template-columns: 1fr;
     position: relative;
   }
@@ -99,105 +99,4 @@ const PollingDot = styled.div`
   background-color: ${({ theme }) => theme.green1};
 `
 
-function SideNav({ history }) {
-  const below1080 = useMedia('(max-width: 1080px)')
-
-  const below1180 = useMedia('(max-width: 1180px)')
-
-  const seconds = useSessionStart()
-
-  const [isDark, toggleDarkMode] = useDarkModeManager()
-
-  return (
-    <Wrapper isMobile={below1080}>
-      {!below1080 ? (
-        <DesktopWrapper>
-          <AutoColumn gap="1rem" style={{ marginLeft: '.75rem', marginTop: '1.5rem' }}>
-            <Title />
-            {!below1080 && (
-              <AutoColumn gap="1.25rem" style={{ marginTop: '1rem' }}>
-                <BasicLink to="/home">
-                  <Option activeText={history.location.pathname === '/home' ?? undefined}>
-                    <TrendingUp size={20} style={{ marginRight: '.75rem' }} />
-                    Overview
-                  </Option>
-                </BasicLink>
-                <BasicLink to="/tokens">
-                  <Option
-                    activeText={
-                      (history.location.pathname.split('/')[1] === 'tokens' ||
-                        history.location.pathname.split('/')[1] === 'token') ??
-                      undefined
-                    }
-                  >
-                    <Disc size={20} style={{ marginRight: '.75rem' }} />
-                    Tokens
-                  </Option>
-                </BasicLink>
-                <BasicLink to="/pairs">
-                  <Option
-                    activeText={
-                      (history.location.pathname.split('/')[1] === 'pairs' ||
-                        history.location.pathname.split('/')[1] === 'pair') ??
-                      undefined
-                    }
-                  >
-                    <PieChart size={20} style={{ marginRight: '.75rem' }} />
-                    Pairs
-                  </Option>
-                </BasicLink>
-
-                <BasicLink to="/accounts">
-                  <Option
-                    activeText={
-                      (history.location.pathname.split('/')[1] === 'accounts' ||
-                        history.location.pathname.split('/')[1] === 'account') ??
-                      undefined
-                    }
-                  >
-                    <List size={20} style={{ marginRight: '.75rem' }} />
-                    Accounts
-                  </Option>
-                </BasicLink>
-              </AutoColumn>
-            )}
-          </AutoColumn>
-          <AutoColumn gap="0.5rem" style={{ marginLeft: '.75rem', marginBottom: '4rem' }}>
-            <HeaderText>
-              <Link href="https://honeyswap.org" target="_blank">
-                Honeyswap.org
-              </Link>
-            </HeaderText>
-            <HeaderText>
-              <Link href="https://about.1hive.org/docs/honeyswap" target="_blank">
-                Docs
-              </Link>
-            </HeaderText>
-            <HeaderText>
-              <Link href="https://twitter.com/1hiveorg" target="_blank">
-                Twitter
-              </Link>
-            </HeaderText>
-            <Toggle isActive={isDark} toggle={toggleDarkMode} />
-          </AutoColumn>
-          {!below1180 && (
-            <Polling style={{ marginLeft: '.5rem' }}>
-              <PollingDot />
-              <a href="/" style={{ color: 'white' }}>
-                <TYPE.small color={'white'}>
-                  Updated {!!seconds ? seconds + 's' : '-'} ago <br />
-                </TYPE.small>
-              </a>
-            </Polling>
-          )}
-        </DesktopWrapper>
-      ) : (
-        <MobileWrapper>
-          <Title />
-        </MobileWrapper>
-      )}
-    </Wrapper>
-  )
-}
-
-export default withRouter(SideNav)
+export default withRouter()

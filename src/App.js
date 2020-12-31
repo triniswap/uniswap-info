@@ -13,7 +13,6 @@ import AllTokensPage from './pages/AllTokensPage'
 import AllPairsPage from './pages/AllPairsPage'
 import PinnedData from './components/PinnedData'
 
-import SideNav from './components/SideNav'
 import AccountLookup from './pages/AccountLookup'
 import { OVERVIEW_TOKEN_BLACKLIST, PAIR_BLACKLIST } from './constants'
 import LocalLoader from './components/LocalLoader'
@@ -25,7 +24,7 @@ const AppWrapper = styled.div`
 `
 const ContentWrapper = styled.div`
   display: grid;
-  grid-template-columns: ${({ open }) => (open ? '220px 1fr 200px' : '220px 1fr 64px')};
+  grid-template-columns: ${({ open }) => (open ? '100% 1fr 200px' : '100% 1fr 64px')};
 
   @media screen and (max-width: 1400px) {
     grid-template-columns: 220px 1fr;
@@ -67,7 +66,6 @@ const LayoutWrapper = ({ children, savedOpen, setSavedOpen }) => {
   return (
     <>
       <ContentWrapper open={savedOpen}>
-        <SideNav />
         <Center id="center">{children}</Center>
         <Right open={savedOpen}>
           <PinnedData open={savedOpen} setSavedOpen={setSavedOpen} />
@@ -100,7 +98,7 @@ function App() {
                 path="/token/:tokenAddress"
                 render={({ match }) => {
                   if (OVERVIEW_TOKEN_BLACKLIST.includes(match.params.tokenAddress.toLowerCase())) {
-                    return <Redirect to="/home" />
+                    return <Redirect to="/token/0x4accf43c858ac40555fe1ddf5806bcbc1612a4c3" />
                   }
                   if (isAddress(match.params.tokenAddress.toLowerCase())) {
                     return (
@@ -109,7 +107,7 @@ function App() {
                       </LayoutWrapper>
                     )
                   } else {
-                    return <Redirect to="/home" />
+                    return <Redirect to="/token/0x4accf43c858ac40555fe1ddf5806bcbc1612a4c3" />
                   }
                 }}
               />
@@ -119,7 +117,7 @@ function App() {
                 path="/pair/:pairAddress"
                 render={({ match }) => {
                   if (PAIR_BLACKLIST.includes(match.params.pairAddress.toLowerCase())) {
-                    return <Redirect to="/home" />
+                    return <Redirect to="/token/0x4accf43c858ac40555fe1ddf5806bcbc1612a4c3" />
                   }
                   if (isAddress(match.params.pairAddress.toLowerCase())) {
                     return (
@@ -128,7 +126,7 @@ function App() {
                       </LayoutWrapper>
                     )
                   } else {
-                    return <Redirect to="/home" />
+                    return <Redirect to="/token/0x4accf43c858ac40555fe1ddf5806bcbc1612a4c3" />
                   }
                 }}
               />
@@ -144,12 +142,12 @@ function App() {
                       </LayoutWrapper>
                     )
                   } else {
-                    return <Redirect to="/home" />
+                    return <Redirect to="/token/0x4accf43c858ac40555fe1ddf5806bcbc1612a4c3" />
                   }
                 }}
               />
 
-              <Route path="/home">
+              <Route path="/token/0x4accf43c858ac40555fe1ddf5806bcbc1612a4c3">
                 <LayoutWrapper savedOpen={savedOpen} setSavedOpen={setSavedOpen}>
                   <GlobalPage />
                 </LayoutWrapper>
@@ -173,7 +171,7 @@ function App() {
                 </LayoutWrapper>
               </Route>
 
-              <Redirect to="/home" />
+              <Redirect to="/token/0x4accf43c858ac40555fe1ddf5806bcbc1612a4c3" />
             </Switch>
           </BrowserRouter>
         ) : (
